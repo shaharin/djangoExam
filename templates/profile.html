@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+        {% csrf_token %}
+        {% for i in cv %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.fullName }}</h5>
+                <p class="card-text">Email: {{ i.email }}</p>
+                <a href="{% url 'resume' i.id %}"><button type="button">download</button></a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

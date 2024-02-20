@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+All Profile
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    {% csrf_token %}
+    <div class="row">
+        {% for i in sc %}
+            <div class="col-md-3">
+                <div class="card" style="border: 5px solid #b3ffb3">
+                    <div class="card-body">
+                        <!-- Name -->
+                        <h5 class="card-title">{{ i.scheduleName }}</h5>
+
+                        <!-- Email -->
+                        <p class="card-text"><strong>Schedule Date:</strong> {{ i.scheduleDate }}</p>
+                        <p class="card-text"><strong>Schedule Time:</strong> {{ i.scheduleTime }}</p>
+                        <!-- Edit and Delete Buttons (if needed) -->
+
+                        <a href="{% url 'update_schedule' i.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'delete_schedule' i.id %}" class="btn btn-danger">Delete</a>
+
+                    </div>
+                </div><br>
+            </div>
+        {% endfor %}
+    </div>
+</div><br/>
+{% endblock %}
