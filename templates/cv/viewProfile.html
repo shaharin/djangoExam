@@ -8,22 +8,25 @@
 <body>
 <div class="container mt-5">
         <div class="card">
-            <img style="border: 1px solid #ddd; border-radius: 4px; padding: 5px; height: 100px; width: 150px;" src="{{cv.image.url}}" class="card-img-top">
+            <div class="row">
+                <div class="col">
+                <img style="border: 1px solid #ddd; border-radius: 4px; padding: 5px; height: 100px; width: 150px;" src="{{cv.image.url}}" class="card-img-top">
+                    </div>
+                <div class="col">
+                <p>Resume of {{ cv.fullName }}</p>
+                    </div>
+                <div class="col"></div>
+            </div><br><br>
             <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">Career Objectives:</h6>
-                <p class="card-text">{{ cv.objectives }}</p>
-                <h3 class="card-title">{{ cv.fullName }}</h3>
-                <label class="col-sm-2 col-form-label col-form-label-sm">Email: </label>
-                <p class="card-text">{{ cv.email }}</p>
-                <label class="col-sm-2 col-form-label col-form-label-sm">Phone: </label>
-                <p class="card-text">{{ cv.phone }}</p>
-                <label class="col-sm-2 col-form-label col-form-label-sm">Gender: </label>
-                <p class="card-text">{{ cv.gender }}</p>
-                <label class="col-sm-2 col-form-label col-form-label-sm">Religion: </label>
-                <p class="card-text">{{ cv.religion }}</p>
-                <label class="col-sm-2 col-form-label col-form-label-sm">Address: </label>
-                <p class="card-text">{{ cv.address }}</p>
-                <h6 class="card-subtitle mb-2 text-muted">Education:</h6>
+                <h6 class="card-subtitle mb-2 text-muted"><strong>Career Objectives:</strong></h6>
+                <p class="card-text">{{ cv.objectives }}</p><br><br>
+                <h3 class="card-title"><strong>Name:&nbsp; &nbsp; </strong>{{ cv.fullName }}</h3><br>
+                <p class="card-text"><strong>Email:&nbsp; &nbsp; </strong>{{ cv.email }}</p><br>
+                <p class="card-text"><strong>Phone:&nbsp; &nbsp; </strong>{{ cv.phone }}</p><br>
+                <p class="card-text"><strong>Gender:&nbsp; &nbsp; </strong>{{ cv.gender }}</p><br>
+                <p class="card-text"><strong>Religion:&nbsp; &nbsp; </strong>{{ cv.religion }}</p><br>
+                <p class="card-text"><strong>Address:&nbsp; &nbsp; </strong>{{ cv.address }}</p><br>
+                <h4 class="card-subtitle mb-2 text-muted"><strong>Education:</strong></h4><br>
                 <table class="table">
   <thead>
     <tr>
@@ -50,12 +53,8 @@
      </tr>
     </tbody>
 </table>
-
-                <p class="card-text">{{ cv.education }}</p>
-                <h6 class="card-subtitle mb-2 text-muted">Work Experience:</h6>
-                <p class="card-text">{{ cv.workExperience }}</p>
-                <h6 class="card-subtitle mb-2 text-muted">Skills:</h6>
-                <p class="card-text">{{ cv.skills }}</p>
+                <p class="card-text"><strong>Experience:&nbsp;&nbsp; </strong>{{ cv.workExperience }}</p><br><br>
+                <p class="card-text"><strong>Skills:&nbsp; &nbsp; </strong>{{ cv.skills }}</p><br><br>
             </div>
 
         </div>

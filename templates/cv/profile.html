@@ -11,6 +11,7 @@ Profile
                 <h5 class="card-title">{{ i.fullName }}</h5>
                 <p class="card-text">Email: {{ i.email }}</p>
                 <a href="{% url 'resume' i.id %}"><button type="button">download</button></a>
+                <a href="{% url 'viewprofile' i.id %}"><button type="button">view</button></a>
             </div>
 
         </div>
